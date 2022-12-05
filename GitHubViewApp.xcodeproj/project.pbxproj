@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992D71BA293DD8A60056A885 /* GitHubAPIClientCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D71B9293DD8A60056A885 /* GitHubAPIClientCollection.swift */; };
 		99E9548C293D9680004A81A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548B293D9680004A81A4 /* AppDelegate.swift */; };
 		99E9548E293D9680004A81A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548D293D9680004A81A4 /* SceneDelegate.swift */; };
 		99E95490293D9680004A81A4 /* GitHubListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548F293D9680004A81A4 /* GitHubListViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		992D71B9293DD8A60056A885 /* GitHubAPIClientCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIClientCollection.swift; sourceTree = "<group>"; };
 		99E95488293D9680004A81A4 /* GitHubViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E9548B293D9680004A81A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E9548D293D9680004A81A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		992D71B8293DD88B0056A885 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				992D71B9293DD8A60056A885 /* GitHubAPIClientCollection.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		99E9547F293D9680004A81A4 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		99E9548A293D9680004A81A4 /* GitHubViewApp */ = {
 			isa = PBXGroup;
 			children = (
+				992D71B8293DD88B0056A885 /* Protocol */,
 				99E954D3293DCC3C004A81A4 /* Codable */,
 				99E954CC293DC67C004A81A4 /* API */,
 				99E954A0293D9CC5004A81A4 /* ViewController */,
@@ -212,6 +223,7 @@
 			files = (
 				99E954CE293DC6A4004A81A4 /* GitHubAPIClient.swift in Sources */,
 				99E954D7293DCC77004A81A4 /* SearchResult.swift in Sources */,
+				992D71BA293DD8A60056A885 /* GitHubAPIClientCollection.swift in Sources */,
 				99E95490293D9680004A81A4 /* GitHubListViewController.swift in Sources */,
 				99E9548C293D9680004A81A4 /* AppDelegate.swift in Sources */,
 				99E9548E293D9680004A81A4 /* SceneDelegate.swift in Sources */,

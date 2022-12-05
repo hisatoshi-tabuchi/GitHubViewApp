@@ -12,19 +12,22 @@ class GitHubListViewController: UIViewController {
     @IBOutlet weak private var repositoryTableView: UITableView!
     
     private var repositories: [Repository] = []
-    private let gitHubAPIClient = GitHubAPIClient()
+    private var gitHubAPIClient: GitHubAPIClientCollection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         
-        gitHubAPIClient.fetchRepositories { [weak self] items in
+        gitHubAPIClient?.fetchRepositories { [weak self] items in
             self?.repositories = items
             self?.repositoryTableView.reloadData()
         } failureHandler: {
             // エラーハンドリング
         }
+    }
+    
+    func inject(_ gitHubAPIClient: GitHubAPIClientCollection) {
+        self.gitHubAPIClient = gitHubAPIClient
     }
 }
 
