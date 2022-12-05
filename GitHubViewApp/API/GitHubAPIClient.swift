@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class GitHubAPIClient: GitHubAPIClientCollection {
+final class GitHubAPIClient: GitHubAPIClientCollection {
     
     private var request: Alamofire.Request?
     
