@@ -13,6 +13,8 @@
 		99E95493293D9680004A81A4 /* GitHubList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E95491293D9680004A81A4 /* GitHubList.storyboard */; };
 		99E95495293D9682004A81A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E95494293D9682004A81A4 /* Assets.xcassets */; };
 		99E95498293D9682004A81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E95496293D9682004A81A4 /* LaunchScreen.storyboard */; };
+		99E954C5293DA6DB004A81A4 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E954C3293DA6DB004A81A4 /* RepositoryTableViewCell.swift */; };
+		99E954C6293DA6DB004A81A4 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E954C4293DA6DB004A81A4 /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		99E95494293D9682004A81A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99E95497293D9682004A81A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E95499293D9682004A81A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E954C3293DA6DB004A81A4 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		99E954C4293DA6DB004A81A4 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		99E9549F293D9CAD004A81A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				99E954C7293DA6F8004A81A4 /* Xib */,
 				99E95491293D9680004A81A4 /* GitHubList.storyboard */,
 			);
 			path = View;
@@ -81,6 +86,23 @@
 				99E9548F293D9680004A81A4 /* GitHubListViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		99E954C7293DA6F8004A81A4 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				99E954C8293DA735004A81A4 /* RepositoryTableViewCell */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		99E954C8293DA735004A81A4 /* RepositoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				99E954C3293DA6DB004A81A4 /* RepositoryTableViewCell.swift */,
+				99E954C4293DA6DB004A81A4 /* RepositoryTableViewCell.xib */,
+			);
+			path = RepositoryTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +166,7 @@
 				99E95498293D9682004A81A4 /* LaunchScreen.storyboard in Resources */,
 				99E95495293D9682004A81A4 /* Assets.xcassets in Resources */,
 				99E95493293D9680004A81A4 /* GitHubList.storyboard in Resources */,
+				99E954C6293DA6DB004A81A4 /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +180,7 @@
 				99E95490293D9680004A81A4 /* GitHubListViewController.swift in Sources */,
 				99E9548C293D9680004A81A4 /* AppDelegate.swift in Sources */,
 				99E9548E293D9680004A81A4 /* SceneDelegate.swift in Sources */,
+				99E954C5293DA6DB004A81A4 /* RepositoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

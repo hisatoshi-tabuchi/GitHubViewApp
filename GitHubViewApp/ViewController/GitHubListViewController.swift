@@ -13,6 +13,8 @@ class GitHubListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
 }
 
@@ -23,7 +25,7 @@ extension GitHubListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
         cell.textLabel?.text = "test"
         
         return cell
