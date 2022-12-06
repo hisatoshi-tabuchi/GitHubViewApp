@@ -27,8 +27,8 @@ final class GitHubListViewController: UIViewController {
     
     private func fetchRepositoriesAndReloadData() {
         Task {
-            self.repositories = await gitHubAPIClient?.fetchRepositories() ?? []
-            self.repositoryTableView.reloadData()
+            repositories = await gitHubAPIClient?.fetchRepositories() ?? []
+            repositoryTableView.reloadData()
         }
     }
     
