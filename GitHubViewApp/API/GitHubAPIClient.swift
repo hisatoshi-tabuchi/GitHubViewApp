@@ -43,8 +43,8 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
         let dataTask = AF.request(searchRepositoryURL, method: .get).serializingDecodable(SearchResult.self)
         
         do {
-            let value = try await dataTask.value
-            return value.items
+            let items = try await dataTask.value.items
+            return items
         } catch {
             fatalError()
         }
