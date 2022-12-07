@@ -59,6 +59,22 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		99DA95D3294047F100696D09 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		99DA95D42940483900696D09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99DA95D3294047F100696D09 /* SearchView */,
+				99E954C8293DA735004A81A4 /* RepositoryTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		99E9547F293D9680004A81A4 = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +98,8 @@
 				99E954D3293DCC3C004A81A4 /* Codable */,
 				99E954CC293DC67C004A81A4 /* API */,
 				99E954A0293D9CC5004A81A4 /* ViewController */,
-				99E9549F293D9CAD004A81A4 /* View */,
+				99E9549F293D9CAD004A81A4 /* Storyboard */,
+				99DA95D42940483900696D09 /* View */,
 				99E9548B293D9680004A81A4 /* AppDelegate.swift */,
 				99E9548D293D9680004A81A4 /* SceneDelegate.swift */,
 				99E95494293D9682004A81A4 /* Assets.xcassets */,
@@ -92,13 +109,12 @@
 			path = GitHubViewApp;
 			sourceTree = "<group>";
 		};
-		99E9549F293D9CAD004A81A4 /* View */ = {
+		99E9549F293D9CAD004A81A4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				99E954C7293DA6F8004A81A4 /* Xib */,
 				99E95491293D9680004A81A4 /* GitHubList.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		99E954A0293D9CC5004A81A4 /* ViewController */ = {
@@ -107,14 +123,6 @@
 				99E9548F293D9680004A81A4 /* GitHubListViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		99E954C7293DA6F8004A81A4 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
-				99E954C8293DA735004A81A4 /* RepositoryTableViewCell */,
-			);
-			path = Xib;
 			sourceTree = "<group>";
 		};
 		99E954C8293DA735004A81A4 /* RepositoryTableViewCell */ = {
