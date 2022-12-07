@@ -17,18 +17,19 @@ final class GitHubListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
-        fetchRepositoriesAndReloadData()
     }
     
     private func setupUI() {
         repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
     
-    private func fetchRepositoriesAndReloadData() {
+    private func fetchRepositoriesAndReloadData(with searchText: String) {
+        guard let searchRepositoryURL = URL(string: "https://api.github.com/search/repositories?q=\(searchText)")
+        else { return }
+        
         Task {
-            repositories = await gitHubAPIClient?.fetchRepositories() ?? []
+            repositories = await gitHubAPIClient?.fetchRepositories(with: searchRepositoryURL) ?? []
             repositoryTableView.reloadData()
         }
     }
@@ -61,5 +62,7 @@ extension GitHubListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // キーボードを閉じる
         view.endEditing(true)
+        
+        fetchRepositoriesAndReloadData(with: searchBar.text ?? "")
     }
 }

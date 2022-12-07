@@ -37,9 +37,7 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
     }
     
     // concurrencyを利用した場合
-    func fetchRepositories() async -> [Repository] {
-        guard let searchRepositoryURL = URL(string: "https://api.github.com/search/repositories?q=swift") else { return [] }
-        
+    func fetchRepositories(with searchRepositoryURL: URL) async -> [Repository] {
         let dataTask = AF.request(searchRepositoryURL, method: .get).serializingDecodable(SearchResult.self)
         
         do {

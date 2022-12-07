@@ -11,5 +11,5 @@ protocol GitHubAPIClientCollection {
     func fetchRepositories(successHandler: @escaping (_ items: [Repository]) -> Void,
                            failureHandler: () -> Void)
     
-    func fetchRepositories() async -> [Repository]
+    func fetchRepositories(with searchRepositoryURL: URL) async -> [Repository]
 }
