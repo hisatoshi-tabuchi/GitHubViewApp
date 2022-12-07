@@ -59,17 +59,9 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		99DA95D3294047F100696D09 /* SearchView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchView;
-			sourceTree = "<group>";
-		};
 		99DA95D42940483900696D09 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				99DA95D3294047F100696D09 /* SearchView */,
 				99E954C8293DA735004A81A4 /* RepositoryTableViewCell */,
 			);
 			path = View;

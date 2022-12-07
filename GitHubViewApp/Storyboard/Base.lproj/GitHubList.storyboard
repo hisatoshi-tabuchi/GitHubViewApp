@@ -17,30 +17,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-Ot-EbZ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="5nO-Sb-3pa"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="QSE-6L-fcd"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iNe-HA-hnP">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8Wv-Bh-Nwo"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A8Y-A1-u4g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fnx-Ot-EbZ" secondAttribute="trailing" id="Zww-oO-y84"/>
-                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="re7-bi-EFA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Fnx-Ot-EbZ" secondAttribute="bottom" id="ykc-Hd-bDi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iNe-HA-hnP" secondAttribute="trailing" id="5cx-Uy-jr2"/>
+                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="top" secondItem="iNe-HA-hnP" secondAttribute="bottom" id="BPV-ps-kzk"/>
+                            <constraint firstItem="iNe-HA-hnP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FrB-R3-qi5"/>
+                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hq0-xU-qLR"/>
+                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pnq-My-CFY"/>
+                            <constraint firstItem="Fnx-Ot-EbZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qlv-iG-Cwd"/>
+                            <constraint firstItem="iNe-HA-hnP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s8V-xp-fXf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="repositorySearchBar" destination="iNe-HA-hnP" id="OIO-MU-Mbo"/>
                         <outlet property="repositoryTableView" destination="Fnx-Ot-EbZ" id="2TM-2S-O9F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="5"/>
+            <point key="canvasLocation" x="135.1145038167939" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>

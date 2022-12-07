@@ -10,6 +10,7 @@ import UIKit
 final class GitHubListViewController: UIViewController {
     
     @IBOutlet weak private var repositoryTableView: UITableView!
+    @IBOutlet weak private var repositorySearchBar: UISearchBar!
     
     private var repositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
@@ -53,4 +54,12 @@ extension GitHubListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension GitHubListViewController: UITableViewDelegate {
+}
+
+// MARK: - UISearchBarDelegate
+extension GitHubListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // キーボードを閉じる
+        view.endEditing(true)
+    }
 }
