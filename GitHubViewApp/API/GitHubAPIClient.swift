@@ -26,7 +26,7 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
                 do {
                     let searchResult  = try JSONDecoder().decode(SearchResult.self, from: data)
                     successHandler(searchResult.items)
-                } catch let error {
+                } catch {
                     print(error.localizedDescription)
                 }
             case .failure(let error):
@@ -46,7 +46,8 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
             let items = try await dataTask.value.items
             return items
         } catch {
-            fatalError()
+            print(error.localizedDescription)
+            return []
         }
     }
 }
