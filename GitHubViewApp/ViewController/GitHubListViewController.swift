@@ -62,7 +62,7 @@ extension GitHubListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // キーボードを閉じる
         view.endEditing(true)
-        
+        // 検索結果を表示する
         fetchRepositoriesAndReloadData(with: searchBar.text ?? "")
     }
 }
