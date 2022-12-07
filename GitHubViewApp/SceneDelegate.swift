@@ -18,12 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let gitHubListVC = UIStoryboard(name: "GitHubList", bundle: nil)
-            .instantiateViewController(withIdentifier: "gitHubListVC") as? GitHubListViewController
-        let gitHubAPIClient = GitHubAPIClient()
-      
-        gitHubListVC?.inject(gitHubAPIClient)
-        window?.rootViewController = gitHubListVC
+        let tabBarController = MainTabBarController()
+
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		992D71BA293DD8A60056A885 /* GitHubAPIClientCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992D71B9293DD8A60056A885 /* GitHubAPIClientCollection.swift */; };
+		9944BEC429407830001189E7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9944BEC329407830001189E7 /* MainTabBarViewController.swift */; };
 		99E9548C293D9680004A81A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548B293D9680004A81A4 /* AppDelegate.swift */; };
 		99E9548E293D9680004A81A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548D293D9680004A81A4 /* SceneDelegate.swift */; };
 		99E95490293D9680004A81A4 /* GitHubListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E9548F293D9680004A81A4 /* GitHubListViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		992D71B9293DD8A60056A885 /* GitHubAPIClientCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIClientCollection.swift; sourceTree = "<group>"; };
+		9944BEC329407830001189E7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		99E95488293D9680004A81A4 /* GitHubViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E9548B293D9680004A81A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E9548D293D9680004A81A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				99E9548F293D9680004A81A4 /* GitHubListViewController.swift */,
+				9944BEC329407830001189E7 /* MainTabBarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				99E954CE293DC6A4004A81A4 /* GitHubAPIClient.swift in Sources */,
 				99E954D7293DCC77004A81A4 /* SearchResult.swift in Sources */,
 				992D71BA293DD8A60056A885 /* GitHubAPIClientCollection.swift in Sources */,
+				9944BEC429407830001189E7 /* MainTabBarViewController.swift in Sources */,
 				99E95490293D9680004A81A4 /* GitHubListViewController.swift in Sources */,
 				99E9548C293D9680004A81A4 /* AppDelegate.swift in Sources */,
 				99E9548E293D9680004A81A4 /* SceneDelegate.swift in Sources */,
