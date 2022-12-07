@@ -12,6 +12,7 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
     
     private var request: Alamofire.Request?
     
+    // クロージャを使用した場合
     func fetchRepositories(successHandler: @escaping (_ items: [Repository]) -> Void,
                            failureHandler: () -> Void) {
         
@@ -25,7 +26,7 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
                 do {
                     let searchResult  = try JSONDecoder().decode(SearchResult.self, from: data)
                     successHandler(searchResult.items)
-                } catch let error {
+                } catch {
                     print(error.localizedDescription)
                 }
             case .failure(let error):
@@ -33,6 +34,21 @@ final class GitHubAPIClient: GitHubAPIClientCollection {
             }
         }
         request?.resume()
+    }
+    
+    // concurrencyを利用した場合
+    func fetchRepositories() async -> [Repository] {
+        guard let searchRepositoryURL = URL(string: "https://api.github.com/search/repositories?q=swift") else { return [] }
+        
+        let dataTask = AF.request(searchRepositoryURL, method: .get).serializingDecodable(SearchResult.self)
+        
+        do {
+            let items = try await dataTask.value.items
+            return items
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
     }
 }
 

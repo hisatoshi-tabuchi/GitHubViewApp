@@ -10,4 +10,6 @@ import Foundation
 protocol GitHubAPIClientCollection {
     func fetchRepositories(successHandler: @escaping (_ items: [Repository]) -> Void,
                            failureHandler: () -> Void)
+    
+    func fetchRepositories() async -> [Repository]
 }

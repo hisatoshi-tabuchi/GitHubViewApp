@@ -16,20 +16,19 @@ final class GitHubListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupUI()
-        fetchAndReloadData()
+        fetchRepositoriesAndReloadData()
     }
     
     private func setupUI() {
         repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
     }
     
-    private func fetchAndReloadData(){
-        gitHubAPIClient?.fetchRepositories { [weak self] items in
-            self?.repositories = items
-            self?.repositoryTableView.reloadData()
-        } failureHandler: {
-            // エラーハンドリング
+    private func fetchRepositoriesAndReloadData() {
+        Task {
+            repositories = await gitHubAPIClient?.fetchRepositories() ?? []
+            repositoryTableView.reloadData()
         }
     }
     
