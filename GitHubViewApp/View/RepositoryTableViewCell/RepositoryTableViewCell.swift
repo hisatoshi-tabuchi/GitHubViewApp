@@ -8,16 +8,20 @@
 import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var favoriteButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func setup(name: String) {
+        nameLabel.text = name
     }
     
 }

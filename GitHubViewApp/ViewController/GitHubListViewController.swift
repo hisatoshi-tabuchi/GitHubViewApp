@@ -46,8 +46,10 @@ extension GitHubListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath)
-        cell.textLabel?.text = repositories[indexPath.row].fullName
+        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath) as! RepositoryTableViewCell
+        let repositoryName = repositories[indexPath.row].fullName
+
+        cell.setup(name: repositoryName)
         
         return cell
     }
