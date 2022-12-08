@@ -16,7 +16,7 @@ final class MainTabBarController: UITabBarController {
 
     func setupFirstTab() {
         guard let gitHubListVC = UIStoryboard(name: "GitHubList", bundle: nil)
-            .instantiateViewController(withIdentifier: "gitHubListVC") as? GitHubListViewController else { return }
+            .instantiateViewController(withIdentifier: "gitHubList") as? GitHubListViewController else { return }
         let gitHubAPIClient = GitHubAPIClient()
       
         gitHubListVC.inject(gitHubAPIClient)
@@ -26,14 +26,10 @@ final class MainTabBarController: UITabBarController {
     }
     
     func setupSecondTab() {
-        // とりあえず同じVCにしてる
-        guard let gitHubListVC = UIStoryboard(name: "GitHubList", bundle: nil)
-            .instantiateViewController(withIdentifier: "gitHubListVC") as? GitHubListViewController else { return }
-        let gitHubAPIClient = GitHubAPIClient()
-      
-        gitHubListVC.inject(gitHubAPIClient)
-        
-        gitHubListVC.tabBarItem = UITabBarItem(title: "hello", image: UIImage(systemName: "square.and.arrow.up"), tag: 0)
-        viewControllers?.append(gitHubListVC)
+        guard let favoriteListVC = UIStoryboard(name: "FavoriteList", bundle: nil)
+            .instantiateViewController(withIdentifier: "FavoriteList") as? FavoriteListViewController else { return }
+
+        favoriteListVC.tabBarItem = UITabBarItem(title: "お気に入り", image: UIImage(systemName: "heart.fill"), tag: 1)
+        viewControllers?.append(favoriteListVC)
     }
 }

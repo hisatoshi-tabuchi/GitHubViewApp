@@ -21,7 +21,7 @@ final class GitHubListViewController: UIViewController {
     }
     
     private func setupUI() {
-        repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryTableViewCell")
     }
     
     private func fetchRepositoriesAndReloadData(with searchText: String) {
@@ -46,7 +46,7 @@ extension GitHubListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
+        let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath)
         cell.textLabel?.text = repositories[indexPath.row].fullName
         
         return cell
