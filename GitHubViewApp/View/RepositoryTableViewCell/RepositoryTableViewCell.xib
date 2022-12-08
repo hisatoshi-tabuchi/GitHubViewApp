@@ -31,6 +31,9 @@
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="tapFavoriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kjf-eX-ZHI"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

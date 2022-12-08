@@ -48,8 +48,12 @@ extension GitHubListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = repositoryTableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath) as! RepositoryTableViewCell
         let repositoryName = repositories[indexPath.row].fullName
+        let isLiked = repositories[indexPath.row].isLiked
 
-        cell.setup(name: repositoryName)
+        cell.setup(name: repositoryName, isLiked: isLiked) { [weak self] in
+            self?.repositories[indexPath.row].isLiked.toggle()
+            self?.repositoryTableView.reloadRows(at: [indexPath], with: .none)
+        }
         
         return cell
     }
