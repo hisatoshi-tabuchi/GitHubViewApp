@@ -21,7 +21,7 @@ struct Repository: Decodable {
         case description
     }
     
-    // 自身と同じ型を2つ受け取る静的メソッド
+    // idでイコール判定する
     static func == (lhs: Repository, rhs: Repository) -> Bool{
         return lhs.id == rhs.id
     }
