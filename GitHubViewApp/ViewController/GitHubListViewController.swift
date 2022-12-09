@@ -13,8 +13,9 @@ final class GitHubListViewController: UIViewController {
     @IBOutlet weak private var repositorySearchBar: UISearchBar!
     
     private var repositories: [Repository] = []
-    private var favoriteRepositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
+    
+    var favoriteRepositories: [Repository] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +53,10 @@ extension GitHubListViewController: UITableViewDataSource {
         
         cell.setup(name: repository.fullName, isLiked: repository.isLiked) { [unowned self] in
             
-            // TODO: 綺麗にしたい
             self.repositories[indexPath.row].isLiked.toggle()
-
+            
+            // TODO: 綺麗にしたい
+            // favoriteRepositoryの更新をしている
             if self.repositories[indexPath.row].isLiked {
                 self.favoriteRepositories.append(self.repositories[indexPath.row])
             } else {

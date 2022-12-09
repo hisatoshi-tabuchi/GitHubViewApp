@@ -7,13 +7,20 @@
 
 import UIKit
 
+// FIXME: 密ってる、状態も依存してる
 class FavoriteListViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
+
+    lazy var gitHubVC = self.tabBarController?.viewControllers?.first as! GitHubListViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        favoriteTableView.reloadData()
     }
     
     private func setupUI() {
@@ -25,12 +32,12 @@ class FavoriteListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension FavoriteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return gitHubVC.favoriteRepositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoriteTableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath)
-        cell.textLabel?.text = "hello"
+        cell.textLabel?.text = gitHubVC.favoriteRepositories[indexPath.row].fullName
         
         return cell
     }
