@@ -20,4 +20,9 @@ struct Repository: Decodable {
         case htmlURL = "html_url"
         case description
     }
+    
+    // 自身と同じ型を2つ受け取る静的メソッド
+    static func == (lhs: Repository, rhs: Repository) -> Bool{
+        return lhs.id == rhs.id
+    }
 }

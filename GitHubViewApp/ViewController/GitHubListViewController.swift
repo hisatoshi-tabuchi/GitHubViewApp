@@ -32,7 +32,16 @@ final class GitHubListViewController: UIViewController {
         
         Task {
             repositories = await gitHubAPIClient?.fetchRepositories(with: searchRepositoryURL) ?? []
+            await updateStatusIfLikedRepository()
             repositoryTableView.reloadData()
+        }
+    }
+    
+    private func updateStatusIfLikedRepository() async {
+        for i in 0 ..< repositories.count {
+            if favoriteRepositories.contains(where: {$0 == repositories[i]}) {
+                repositories[i].isLiked.toggle()
+            }
         }
     }
     
