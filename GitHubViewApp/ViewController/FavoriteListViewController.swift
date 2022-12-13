@@ -9,12 +9,10 @@ import UIKit
 
 class FavoriteListViewController: UIViewController {
     
-    @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak private var favoriteTableView: UITableView!
     
     private var favoriteRepositoryClient: FavoriteRepositoryClientCollection?
     private var favoriteRepositories: [FavoriteRepository] = []
-
-    lazy var gitHubVC = self.tabBarController?.viewControllers?.first as! GitHubListViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
