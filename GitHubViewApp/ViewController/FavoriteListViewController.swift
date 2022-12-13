@@ -11,7 +11,7 @@ class FavoriteListViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
     
-    private var favoriteRepositoryClient: FavoriteRepositoryClient?
+    private var favoriteRepositoryClient: FavoriteRepositoryClientCollection?
     private var favoriteRepositories: [FavoriteRepository] = []
 
     lazy var gitHubVC = self.tabBarController?.viewControllers?.first as! GitHubListViewController
@@ -30,7 +30,7 @@ class FavoriteListViewController: UIViewController {
         favoriteTableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteTableViewCell")
     }
     
-    func inject(_ favoriteRepositoryClient: FavoriteRepositoryClient) {
+    func inject(_ favoriteRepositoryClient: FavoriteRepositoryClientCollection) {
         self.favoriteRepositoryClient = favoriteRepositoryClient
     }
 }

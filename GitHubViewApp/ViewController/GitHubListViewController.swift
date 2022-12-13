@@ -14,7 +14,7 @@ final class GitHubListViewController: UIViewController {
     
     private var repositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
-    private var favoriteRepositoryClient: FavoriteRepositoryClient?
+    private var favoriteRepositoryClient: FavoriteRepositoryClientCollection?
     
     var favoriteRepositories: [Repository] = []
     
@@ -51,7 +51,7 @@ final class GitHubListViewController: UIViewController {
         }
     }
     
-    func inject(gitHubAPIClient: GitHubAPIClientCollection, favoriteRepositoryClient: FavoriteRepositoryClient) {
+    func inject(gitHubAPIClient: GitHubAPIClientCollection, favoriteRepositoryClient: FavoriteRepositoryClientCollection) {
         self.gitHubAPIClient = gitHubAPIClient
         self.favoriteRepositoryClient = favoriteRepositoryClient
     }
