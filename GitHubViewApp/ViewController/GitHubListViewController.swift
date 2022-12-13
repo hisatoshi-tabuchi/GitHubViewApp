@@ -13,7 +13,6 @@ final class GitHubListViewController: UIViewController {
     @IBOutlet weak private var repositorySearchBar: UISearchBar!
     
     private var repositories: [Repository] = []
-    private var favoriteRepositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
     private var favoriteRepositoryClient: FavoriteRepositoryClientCollection?
     
@@ -70,10 +69,8 @@ extension GitHubListViewController: UITableViewDataSource {
             
             // favoriteRepositoryの更新をしている(よき書き方あれば…）
             if self.repositories[indexPath.row].isLiked {
-                self.favoriteRepositories.append(self.repositories[indexPath.row])
                 self.favoriteRepositoryClient?.saveFavoriteRepository(self.repositories[indexPath.row])
             } else {
-                self.favoriteRepositories.removeAll(where: { $0.id == self.repositories[indexPath.row].id})
                 self.favoriteRepositoryClient?.deleteFavoriteRepository(self.repositories[indexPath.row])
             }
             
