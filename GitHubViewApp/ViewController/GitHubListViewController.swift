@@ -22,10 +22,6 @@ final class GitHubListViewController: UIViewController {
         setupUI()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        favoriteRepositoryClient!.saveFavoriteRepositories(with: favoriteRepositories)
-    }
-    
     private func setupUI() {
         repositoryTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryTableViewCell")
     }
@@ -75,8 +71,10 @@ extension GitHubListViewController: UITableViewDataSource {
             // favoriteRepositoryの更新をしている(よき書き方あれば…）
             if self.repositories[indexPath.row].isLiked {
                 self.favoriteRepositories.append(self.repositories[indexPath.row])
+                self.favoriteRepositoryClient?.saveFavoriteRepository(self.repositories[indexPath.row])
             } else {
                 self.favoriteRepositories.removeAll(where: { $0.id == self.repositories[indexPath.row].id})
+                self.favoriteRepositoryClient?.deleteFavoriteRepository(self.repositories[indexPath.row])
             }
             
             self.repositoryTableView.reloadRows(at: [indexPath], with: .none)

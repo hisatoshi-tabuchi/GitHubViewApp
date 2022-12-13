@@ -8,7 +8,8 @@
 import Foundation
 
 protocol FavoriteRepositoryClientCollection {
-    func saveFavoriteRepositories(with favoriteRepositories: [Repository])
+    func saveFavoriteRepository(_ repo: Repository)
     func getFavoriteRepositories() -> [FavoriteRepository]
+    func deleteFavoriteRepository(_ repo: Repository)
     func deleteAll()
 }
