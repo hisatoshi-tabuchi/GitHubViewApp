@@ -20,9 +20,4 @@ struct Repository: Decodable {
         case htmlURL = "html_url"
         case description
     }
-    
-    // idでイコール判定する
-    static func == (lhs: Repository, rhs: Repository) -> Bool{
-        return lhs.id == rhs.id
-    }
 }

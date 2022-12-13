@@ -13,10 +13,9 @@ final class GitHubListViewController: UIViewController {
     @IBOutlet weak private var repositorySearchBar: UISearchBar!
     
     private var repositories: [Repository] = []
+    private var favoriteRepositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
     private var favoriteRepositoryClient: FavoriteRepositoryClientCollection?
-    
-    var favoriteRepositories: [Repository] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ final class GitHubListViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        favoriteRepositoryClient?.saveFavoriteRepositories(with: favoriteRepositories)
+        favoriteRepositoryClient!.saveFavoriteRepositories(with: favoriteRepositories)
     }
     
     private func setupUI() {
@@ -44,8 +43,10 @@ final class GitHubListViewController: UIViewController {
     
     /// お気に入り登録リポジトリであればステータス更新
     private func updateIsLikedStatusIfNeed() async {
+        let fRepoInRealm = favoriteRepositoryClient!.getFavoriteRepositories()
+        
         for i in 0 ..< repositories.count {
-            if favoriteRepositories.contains(where: {$0 == repositories[i]}) {
+            if fRepoInRealm.contains(where: {$0.id == repositories[i].id}) {
                 repositories[i].isLiked.toggle()
             }
         }

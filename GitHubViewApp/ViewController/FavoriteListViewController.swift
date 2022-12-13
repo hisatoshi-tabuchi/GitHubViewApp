@@ -22,7 +22,7 @@ class FavoriteListViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        favoriteRepositories = favoriteRepositoryClient?.getFavoriteRepositories() ?? []
+        favoriteRepositories = favoriteRepositoryClient!.getFavoriteRepositories()
         favoriteTableView.reloadData()
     }
     
