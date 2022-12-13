@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var config = Realm.Configuration()
+        config.migrationBlock = { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+//                migration.enumerateObjects(ofType: User.className()) { (oldObject, newObject) in
+//                    let firstName = oldObject!["firstName"] as! String
+//                    let lastName = oldObject!["lastName"] as! String
+//                    newObject!["fullName"] = firstName + lastName
+//                }
+//
+//                let realm = try! Realm()
+//
+//                try! realm.write {
+//                  realm.deleteAll()
+//                }
+                
+            }
+        }
+
+        config.schemaVersion = 1
+        Realm.Configuration.defaultConfiguration = config
+
         return true
     }
 

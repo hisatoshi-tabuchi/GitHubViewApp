@@ -7,10 +7,12 @@
 
 import UIKit
 
-// FIXME: 密ってる、状態も依存してる
 class FavoriteListViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
+    
+    private var favoriteRepositoryClient: FavoriteRepositoryClient?
+    private var favoriteRepositories: [FavoriteRepository] = []
 
     lazy var gitHubVC = self.tabBarController?.viewControllers?.first as! GitHubListViewController
     
@@ -20,11 +22,16 @@ class FavoriteListViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        favoriteRepositories = favoriteRepositoryClient?.getFavoriteRepositories() ?? []
         favoriteTableView.reloadData()
     }
     
     private func setupUI() {
         favoriteTableView.register(UINib(nibName: "FavoriteTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteTableViewCell")
+    }
+    
+    func inject(_ favoriteRepositoryClient: FavoriteRepositoryClient) {
+        self.favoriteRepositoryClient = favoriteRepositoryClient
     }
 }
 
@@ -32,12 +39,12 @@ class FavoriteListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension FavoriteListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gitHubVC.favoriteRepositories.count
+        return favoriteRepositories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoriteTableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath)
-        cell.textLabel?.text = gitHubVC.favoriteRepositories[indexPath.row].fullName
+        cell.textLabel?.text = favoriteRepositories[indexPath.row].fullName
         
         return cell
     }

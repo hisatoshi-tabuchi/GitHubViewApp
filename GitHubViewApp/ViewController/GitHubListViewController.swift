@@ -14,12 +14,17 @@ final class GitHubListViewController: UIViewController {
     
     private var repositories: [Repository] = []
     private var gitHubAPIClient: GitHubAPIClientCollection?
+    private var favoriteRepositoryClient: FavoriteRepositoryClient?
     
     var favoriteRepositories: [Repository] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        favoriteRepositoryClient?.saveFavoriteRepositories(with: favoriteRepositories)
     }
     
     private func setupUI() {
@@ -46,8 +51,9 @@ final class GitHubListViewController: UIViewController {
         }
     }
     
-    func inject(_ gitHubAPIClient: GitHubAPIClientCollection) {
+    func inject(gitHubAPIClient: GitHubAPIClientCollection, favoriteRepositoryClient: FavoriteRepositoryClient) {
         self.gitHubAPIClient = gitHubAPIClient
+        self.favoriteRepositoryClient = favoriteRepositoryClient
     }
 }
 
